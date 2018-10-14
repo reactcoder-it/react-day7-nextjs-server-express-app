@@ -1,9 +1,20 @@
 import Feature from "../components/Feature";
 
-const features = {
-    featureTitle: "Top rated instructors",
-    featureImage: "/static/img1.svg"
-}
+const features = [{
+    title: "Top rated instructors",
+    image: "/static/img1.svg",
+    content: "Our interactive curriculum, theory practice, and digital lesson reports help you <strong>learn faster</strong> and <strong>smarter</strong>."
+},
+{
+    title: "Award winning apps",
+    image: "/static/img2.svg",
+    content: "We’ve <strong>cherry-picked</strong> the best instructors from the top schools based on <strong>learner feedback</strong>."
+},
+{
+    title: "Get started fast",
+    image: "/static/img3.svg",
+    content: "We aim to match you with an instructor within <strong>24 hours</strong> and get you on the road within <strong>7 days</strong>."
+}]
 
 const FeatureList = (props) => (
     <div className="feature-list">
@@ -23,15 +34,11 @@ const FeatureList = (props) => (
 export default () => (
   <div className="app">
     <FeatureList>
-        <Feature title="Top rated instructors" image="/static/img1.svg">
-            We’ve <strong>cherry-picked</strong> the best instructors from the top schools based on <strong>learner feedback</strong>.
-        </Feature>
-        <Feature title="Award winning apps" image="/static/img2.svg">
-            Our interactive curriculum, theory practice, and digital lesson reports help you <strong>learn faster</strong> and <strong>smarter</strong>.
-        </Feature>
-        <Feature title="Get started fast" image="/static/img3.svg">
-            We aim to match you with an instructor within <strong>24 hours</strong> and get you on the road within <strong>7 days</strong>.
-        </Feature>
+        {features.map(feature => (
+            <Feature title={feature.title} image={feature.image}>
+                {feature.content}
+            </Feature>
+        ))}
     </FeatureList>
     <style jsx>{`
         .app {
