@@ -5,8 +5,8 @@ export default (props) => (
             <div className="feature__image-block">
                 <img className="feature__image" src={props.image} />
             </div>
-            <div>
-                <p className="feature__text">{props.children}</p>
+            <div className="feature__text">
+                {props.children}
             </div>
         </div>
         <style jsx>{`

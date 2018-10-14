@@ -1,41 +1,30 @@
-import Feature from "../components/Feature";
+import Feature from '../components/Feature';
+import FeatureList from '../components/FeatureList'
 
 const features = [{
+    id: 1,
     title: "Top rated instructors",
     image: "/static/img1.svg",
-    content: "Our interactive curriculum, theory practice, and digital lesson reports help you <strong>learn faster</strong> and <strong>smarter</strong>."
+    content: <div>We’ve <strong>cherry-picked</strong> the best instructors from the top schools based on <strong>learner feedback</strong>.</div>,
 },
 {
+    id: 2,
     title: "Award winning apps",
     image: "/static/img2.svg",
-    content: "We’ve <strong>cherry-picked</strong> the best instructors from the top schools based on <strong>learner feedback</strong>."
+    content: <div>Our interactive curriculum, theory practice, and digital lesson reports help you <strong>learn faster</strong> and <strong>smarter</strong>.</div>
 },
 {
+    id: 3,
     title: "Get started fast",
     image: "/static/img3.svg",
-    content: "We aim to match you with an instructor within <strong>24 hours</strong> and get you on the road within <strong>7 days</strong>."
+    content: <div>We aim to match you with an instructor within <strong>24 hours</strong> and get you on the road within <strong>7 days</strong>.</div>
 }]
-
-const FeatureList = (props) => (
-    <div className="feature-list">
-        {props.children}
-        <style jsx>{`
-            .feature-list {
-                display: flex;
-                justify-content: space-between;
-                max-width: 1200px;
-                width: 100%;
-                margin: auto;
-            }
-        `}</style>
-    </div>
-)
 
 export default () => (
   <div className="app">
     <FeatureList>
         {features.map(feature => (
-            <Feature title={feature.title} image={feature.image}>
+            <Feature key={feature.id} title={feature.title} image={feature.image}>
                 {feature.content}
             </Feature>
         ))}
